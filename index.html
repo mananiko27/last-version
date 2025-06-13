@@ -9,12 +9,22 @@
     body {
       margin: 0;
       font-family: 'Georgia', serif;
+      color: #4a4a4a;
+      line-height: 1.6;
+    }
+
+    .main-page {
       background-image: url('texture.jpg');
+    }
+
+    .marta-page {
+      background-image: url('texture2.jpg');
+    }
+
+    .main-page, .marta-page {
       background-size: cover;
       background-repeat: no-repeat;
       background-attachment: fixed;
-      color: #4a4a4a;
-      line-height: 1.6;
     }
 
     header {
@@ -85,12 +95,12 @@
     }
   </style>
 </head>
-<body>
+<body class="main-page">
   <header>
     <img src="logo.jpg" alt="mARTa Logo">
     <nav>
       <a href="#home">Home</a>
-      <a href="#marta">mARTa</a>
+      <a href="#marta" onclick="switchToMarta()">mARTa</a>
       <a href="#handmade">Handmade</a>
       <a href="#workshops">Workshop Corner</a>
       <a href="#contact">Contact</a>
@@ -100,8 +110,21 @@
   <section class="section" id="home">
   </section>
 
+  <section class="section" id="marta" style="display: none;">
+    <h2>Martha</h2>
+    <p>This section will include Martha's story and artwork.</p>
+  </section>
+
   <footer>
     <p>With love and memory of Martha — mARTa Handcrafts</p>
   </footer>
+
+  <script>
+    function switchToMarta() {
+      document.body.className = 'marta-page';
+      document.getElementById('home').style.display = 'none';
+      document.getElementById('marta').style.display = 'block';
+    }
+  </script>
 </body>
 </html>
