@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>mARTa Handcrafts</title>
   <style>
     body {
@@ -13,49 +13,58 @@
       line-height: 1.6;
     }
 
-    .main-page {
-      background-image: url('texture.jpg');
-    }
-
-    .marta-page {
-      background-image: url('texture2.jpg');
-    }
-
-    .main-page, .marta-page {
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-attachment: fixed;
-    }
-
     header {
-      background-color: #fffaf5cc;
-      padding: 1rem 2rem;
       display: flex;
+      flex-direction: column;
       align-items: center;
-      justify-content: space-between;
-      border-bottom: 1px solid #e5e0d8;
+      padding: 1.5rem 1rem;
+      background-color: transparent;
     }
 
-    header img {
-      height: 70px;
-      margin-right: auto;
+    .text-logo h1 {
+      margin: 0;
+      font-size: 2.2rem;
+      font-weight: bold;
+      color: #6b8e23; /* soft green */
+      font-family: 'Georgia', serif;
+    }
+
+    .text-logo p {
+      margin: 0.2rem 0 1rem;
+      font-style: italic;
+      color: #8f9779;
     }
 
     nav {
       display: flex;
-      gap: 1.2rem;
+      gap: 1.5rem;
+      justify-content: center;
+      flex-wrap: wrap;
     }
 
     nav a {
       text-decoration: none;
       color: #4a4a4a;
       font-weight: bold;
+      font-size: 1rem;
     }
 
     .section {
       padding: 2rem;
       max-width: 900px;
       margin: 0 auto;
+    }
+
+    #home {
+      background-image: url('texture.jpg');
+      background-size: cover;
+      background-attachment: fixed;
+    }
+
+    #marta {
+      background-image: url('texture2.jpg');
+      background-size: cover;
+      background-attachment: fixed;
     }
 
     .section h2 {
@@ -95,12 +104,15 @@
     }
   </style>
 </head>
-<body class="main-page">
+<body>
   <header>
-    <img src="logo.jpg" alt="mARTa Logo">
+    <div class="text-logo">
+      <h1>m<span style="font-weight: normal;">ARTa</span> Handcrafts</h1>
+      <p>art, color, dreams</p>
+    </div>
     <nav>
       <a href="#home">Home</a>
-      <a href="#marta" onclick="switchToMarta()">mARTa</a>
+      <a href="#marta">mARTa</a>
       <a href="#handmade">Handmade</a>
       <a href="#workshops">Workshop Corner</a>
       <a href="#contact">Contact</a>
@@ -108,23 +120,15 @@
   </header>
 
   <section class="section" id="home">
+    <!-- Home section content to come later -->
   </section>
 
-  <section class="section" id="marta" style="display: none;">
-    <h2>Martha</h2>
-    <p>This section will include Martha's story and artwork.</p>
+  <section class="section" id="marta">
+    <!-- mARTa section content to be filled -->
   </section>
 
   <footer>
     <p>With love and memory of Martha — mARTa Handcrafts</p>
   </footer>
-
-  <script>
-    function switchToMarta() {
-      document.body.className = 'marta-page';
-      document.getElementById('home').style.display = 'none';
-      document.getElementById('marta').style.display = 'block';
-    }
-  </script>
 </body>
 </html>
