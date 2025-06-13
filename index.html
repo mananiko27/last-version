@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,39 +9,70 @@
     body {
       margin: 0;
       font-family: 'Georgia', serif;
-      background-color: #f1e3d0;
-      background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAIElEQVQoU2NkwAMYGBgY4aGhoSg2KjgwYGCgq+GhgSkA8xYGHE4DRuAAAAAElFTkSuQmCC');
-      background-repeat: repeat;
-      background-size: auto;
+      background-image: url('texture.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
       color: #4a4a4a;
       line-height: 1.6;
     }
 
     header {
-      background-color: #fff;
+      background-color: #fffaf5cc;
       padding: 1rem 2rem;
-      text-align: center;
-      border-bottom: 1px solid #d8c7b3;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid #e5e0d8;
     }
 
     header img {
       height: 70px;
-      margin-bottom: 0.5rem;
+      margin-right: auto;
     }
 
     nav {
       display: flex;
-      justify-content: center;
-      gap: 2rem;
-      flex-wrap: wrap;
-      margin-top: 1rem;
+      gap: 1.2rem;
     }
 
     nav a {
       text-decoration: none;
       color: #4a4a4a;
       font-weight: bold;
-      font-size: 1rem;
+    }
+
+    .section {
+      padding: 2rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .section h2 {
+      font-family: 'Georgia', serif;
+      color: #3a3a3a;
+    }
+
+    .text-block {
+      display: flex;
+      align-items: center;
+      margin-bottom: 2rem;
+    }
+
+    .text-block:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+
+    .text-block img {
+      width: 120px;
+      height: auto;
+      margin: 0 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    .text-block p {
+      flex: 1;
     }
 
     footer {
@@ -64,6 +96,9 @@
       <a href="#contact">Contact</a>
     </nav>
   </header>
+
+  <section class="section" id="home">
+  </section>
 
   <footer>
     <p>With love and memory of Martha — mARTa Handcrafts</p>
