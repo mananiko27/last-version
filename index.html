@@ -3,50 +3,44 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>mARTa Handcrafts</title>
   <style>
     body {
       margin: 0;
       font-family: 'Georgia', serif;
+      background-image: url('texture.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
       color: #4a4a4a;
       line-height: 1.6;
     }
 
     header {
+      padding: 1rem 2rem;
       display: flex;
-      flex-direction: column;
       align-items: center;
-      padding: 1.5rem 1rem;
-      background-color: transparent;
+      justify-content: space-between;
+      background: none;
     }
 
-    .text-logo h1 {
-      margin: 0;
-      font-size: 2.2rem;
-      font-weight: bold;
-      color: #6b8e23; /* soft green */
-      font-family: 'Georgia', serif;
-    }
-
-    .text-logo p {
-      margin: 0.2rem 0 1rem;
-      font-style: italic;
-      color: #8f9779;
+    header img {
+      height: 90px;
     }
 
     nav {
+      flex: 1;
       display: flex;
-      gap: 1.5rem;
-      justify-content: center;
-      flex-wrap: wrap;
+      justify-content: space-evenly;
+      align-items: center;
     }
 
     nav a {
       text-decoration: none;
       color: #4a4a4a;
       font-weight: bold;
-      font-size: 1rem;
+      padding: 0.5rem;
     }
 
     .section {
@@ -55,61 +49,47 @@
       margin: 0 auto;
     }
 
-    #home {
-      background-image: url('texture.jpg');
-      background-size: cover;
-      background-attachment: fixed;
-    }
-
-    #marta {
-      background-image: url('texture2.jpg');
-      background-size: cover;
-      background-attachment: fixed;
-    }
-
-    .section h2 {
-      font-family: 'Georgia', serif;
-      color: #3a3a3a;
-    }
-
-    .text-block {
-      display: flex;
-      align-items: center;
-      margin-bottom: 2rem;
-    }
-
-    .text-block:nth-child(even) {
-      flex-direction: row-reverse;
-    }
-
-    .text-block img {
-      width: 120px;
-      height: auto;
-      margin: 0 1.5rem;
-      border-radius: 10px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    }
-
-    .text-block p {
-      flex: 1;
-    }
-
     footer {
       text-align: center;
       padding: 2rem;
       font-size: 0.9rem;
-      background-color: #f1ece3;
       color: #777;
-      margin-top: 3rem;
     }
   </style>
+  <script>
+    function setBackground(hash) {
+      let bg = 'texture.jpg';
+      switch(hash) {
+        case '#marta':
+          bg = 'texture2.jpg';
+          break;
+        case '#handmade':
+          bg = 'texture.jpg';
+          break;
+        case '#workshops':
+          bg = 'texture2.jpg';
+          break;
+        case '#contact':
+          bg = 'texture.jpg';
+          break;
+        default:
+          bg = 'texture.jpg';
+      }
+      document.body.style.backgroundImage = `url('${bg}')`;
+    }
+
+    window.addEventListener('hashchange', () => {
+      setBackground(location.hash);
+    });
+
+    window.addEventListener('load', () => {
+      setBackground(location.hash || '#home');
+    });
+  </script>
 </head>
 <body>
   <header>
-    <div class="text-logo">
-      <h1>m<span style="font-weight: normal;">ARTa</span> Handcrafts</h1>
-      <p>art, color, dreams</p>
-    </div>
+    <img src="logo.jpg" alt="mARTa Logo">
     <nav>
       <a href="#home">Home</a>
       <a href="#marta">mARTa</a>
@@ -119,13 +99,11 @@
     </nav>
   </header>
 
-  <section class="section" id="home">
-    <!-- Home section content to come later -->
-  </section>
-
-  <section class="section" id="marta">
-    <!-- mARTa section content to be filled -->
-  </section>
+  <section class="section" id="home"></section>
+  <section class="section" id="marta"></section>
+  <section class="section" id="handmade"></section>
+  <section class="section" id="workshops"></section>
+  <section class="section" id="contact"></section>
 
   <footer>
     <p>With love and memory of Martha — mARTa Handcrafts</p>
